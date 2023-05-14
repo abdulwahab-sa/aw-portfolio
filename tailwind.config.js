@@ -8,6 +8,10 @@ export default {
 				mediumGrey: '#5F6D7E',
 				lightGrey: '#F0F0F0',
 				primaryYellow: '#facf0f',
+				bgGrey: '#F0F0F0',
+			},
+			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif'],
 			},
 		},
 	},
