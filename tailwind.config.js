@@ -9,6 +9,7 @@ export default {
 				lightGrey: '#F0F0F0',
 				primaryYellow: '#facf0f',
 				bgGrey: '#F0F0F0',
+				skillGrey: 'rgba(153,153,153,.2)',
 			},
 			fontFamily: {
 				montserrat: ['Montserrat', 'sans-serif'],

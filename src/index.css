@@ -40,4 +40,26 @@ body {
 }
 
 
+.section-title{
+  position: relative;
+}
+
+
+
+.section-title::after{
+  content: '';
+  height: 6px;
+  width: 40px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: #facf0f;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+
+
+
 }
