@@ -41,7 +41,7 @@ const skills = [
 
 const AboutSection = () => {
 	return (
-		<div className="flex flex-col space-y-12 py-16 px-6 bg-bgGrey text-darkGrey ">
+		<div id="about-sec" className="flex flex-col space-y-12 py-16 px-6 bg-bgGrey text-darkGrey ">
 			<div className="flex flex-col mx-auto text-center space-y-10">
 				<h3 className="section-title text-2xl md:text-4xl font-bold tracking-widest ">ABOUT ME</h3>
 				<p className="font-montserrat md:max-w-3xl font-normal text-md md:text-lg">

@@ -8,22 +8,22 @@ const navLinks = [
 	{
 		id: 1,
 		title: 'Home',
-		path: '/',
+		path: '#home-sec',
 	},
 	{
 		id: 2,
 		title: 'About',
-		path: '/',
+		path: '#about-sec',
 	},
 	{
 		id: 3,
 		title: 'Projects',
-		path: '/',
+		path: '#project-sec',
 	},
 	{
 		id: 4,
 		title: 'Contact',
-		path: '/',
+		path: '#contact-sec',
 	},
 ];
 
@@ -49,7 +49,7 @@ const Navbar = () => {
 								className="uppercase text-md font-bold tracking-wider text-darkGrey hover:text-primaryYellow transition-all cursor-pointer"
 								key={link.id}
 							>
-								{link.title}
+								<a href={link.path}>{link.title}</a>
 							</li>
 						))}
 					</ul>
@@ -66,8 +66,9 @@ const Navbar = () => {
 					>
 						{navLinks.map((link) => (
 							<span className="border border-lightGrey uppercase text-sm font-medium px-4 py-5 tracking-wider " key={link.id}>
-								{' '}
-								{link.title}{' '}
+								<a href={link.path} onClick={() => setShowMenu(!showMenu)}>
+									{link.title}
+								</a>
 							</span>
 						))}
 					</motion.div>
