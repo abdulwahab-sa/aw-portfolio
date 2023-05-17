@@ -1,9 +1,14 @@
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { MdErrorOutline } from 'react-icons/md';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+	const form = useRef();
+	const [formSuccess, setFormSuccess] = useState(false);
+
 	const schema = yup.object().shape({
 		fullName: yup.string().required(),
 		email: yup.string().email().required(),
@@ -18,8 +23,16 @@ const Contact = () => {
 		resolver: yupResolver(schema),
 	});
 
-	const onSubmit = (data) => {
-		console.log(data);
+	const onSubmit = () => {
+		emailjs.sendForm('service_qw88fmz', 'template_k20jadw', form.current, 'Bf9-ZZCZsbiYrBO1D').then(
+			(result) => {
+				console.log(result.text);
+				setFormSuccess(!formSuccess);
+			},
+			(error) => {
+				console.log(error.text);
+			}
+		);
 	};
 
 	return (
@@ -31,7 +44,7 @@ const Contact = () => {
 				</p>
 			</div>
 			<div className="p-8  bg-gray-50 w-full md:w-3/5 md:max-w-2xl mx-auto rounded-lg">
-				<form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+				<form ref={form} onSubmit={handleSubmit(onSubmit)} className="space-y-10">
 					<div className="relative flex flex-col space-y-3">
 						<label htmlFor="fullName" className="text-sm font-bold text-mediumGrey">
 							Name{' '}
@@ -80,6 +93,7 @@ const Contact = () => {
 						className="bg-primaryYellow  py-3 px-8 text-sm tracking-wider font-bold cursor-pointer drop-shadow-md rounded-md"
 					/>
 				</form>
+				{formSuccess && <p className="text-darkGrey text-sm font-medium mt-8"> Your message has been sent succesfully! </p>}
 			</div>
 		</div>
 	);
