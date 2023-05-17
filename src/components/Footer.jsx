@@ -28,7 +28,7 @@ const social = [
 
 const Footer = () => {
 	return (
-		<div className="py-12 px-8 lg:px-20 bg-darkGrey font-montserrat">
+		<div className=" py-12 px-8 lg:px-20 bg-darkGrey font-montserrat">
 			<div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:justify-between md:items-center">
 				<div className="space-y-3">
 					<h6 className="text-primaryYellow text-md lg:text-lg font-bold tracking-widest">ABDUL WAHAB</h6>
